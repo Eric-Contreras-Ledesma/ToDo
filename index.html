@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+<body>
+    <!--Encabezado de la pagina-->
+    <h1>To Do List</h1>
+    <!--formulario para añadir nuevas tareas-->
+    <form action="#" id="userInput">
+        <input type="text" placeholder="Escribe tu tarea aqui..." autofocus>
+        <input type="submit" value="+" id="addBtn">
+    </form>
+    <!--Contenedor de la lista de tareas-->
+    <div id="list" class="list-container"> <!--Recuerda que en id y class solo se define un nombre-->
+
+    </div>
+    <div id="stats">
+       
+    </div>
+    <footer>
+        <!--Informacion del creador y la fecha-->
+        <p>Desarrollo de Aplicaciones con Tecnología Web | Eric Contreras Ledesma</p>
+        <p id="fecha"></p>
+    </footer>
+    <script src="js/toDo.js"></script>
+    <script>
+        // fecha actual
+        let fechaActual = new Date();
+        // elementos del DOM
+        let fechaElemento = document.getElementById("fecha");
+
+        // formateamos la fecha dd/mm/aaaa
+        //let formatoFecha = fechaActual.getDate() + "/" + (fechaActual.getMonth() + 1) + "/" + fechaActual.getFullYear();
+        let formatoFecha = fechaActual.getDate() + "/" + (fechaActual.getMonth() < 10 ? + "0" : " ") + (fechaActual.getMonth() + 1) + "/" + fechaActual.getFullYear();
+
+        // asignar la fecha al elemento 
+        fechaElemento.innerHTML = "Fecha: " + formatoFecha;
+
+    </script>
+
+</body>
+</html>
